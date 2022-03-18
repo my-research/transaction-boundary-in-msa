@@ -7,3 +7,6 @@ include 'api'
 include 'masilcodegen'
 include 'consumer'
 include 'domain'
+include 'order'
+include 'payment'
+
