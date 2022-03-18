@@ -14,7 +14,7 @@ public class OrderService {
     private final OrderDetailRepository repository;
     private final ExternalModule externalModule;
 
-    @Transactional(rollbackFor = {PaymentException.class})
+    @Transactional
     public OrderDetail orderWithPayment(String point, String type) {
         OrderDetail savedOrderDetail = repository.save(OrderDetail.builder()
                 .item("SOME_ITEM")
