@@ -1,18 +1,11 @@
 rootProject.name = 'transactional-boundary-in-msa'
 
-include 'refund-execution'
-
-include 'api'
-
-include 'masilcodegen'
-include 'consumer'
-include 'domain'
-include 'order'
-include 'payment'
-include 'tx-asynchronous'
 include 'membership'
-include 'tx-asynchronous:membership'
-findProject(':tx-asynchronous:membership')?.name = 'membership'
-include 'tx-asynchronous:refund'
-findProject(':tx-asynchronous:refund')?.name = 'refund'
+
+include 'tx-in-synchronous:membership'
+include 'tx-in-synchronous:refund'
+
+include 'tx-in-asynchronous:membership'
+include 'tx-in-asynchronous:refund'
+include 'simple-transaction'
 
